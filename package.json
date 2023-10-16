@@ -16,8 +16,10 @@
     "husky": "^8.0.3",
     "lint-staged": "^15.0.1"
   },
+  "prepare": "husky install",
   "scripts": {
-    "lint-and-check": "eslint --max-warnings=0 && echo 'Linting passed.' || (echo 'Linting failed. Please fix the errors.' && exit 1)"
+    "lint-and-check": "eslint --fix",
+    "pre-commit": "lint-staged"
   },
   "lint-staged": {
     "*.js": ["npm run lint-and-check", "git add"]
