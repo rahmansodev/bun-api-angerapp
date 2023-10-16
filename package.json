@@ -17,7 +17,10 @@
     "lint-staged": "^15.0.1"
   },
   "lint-staged": {
-    "*.js": ["eslint --max-warnings=0", "echo 'Linting failed. Please fix the errors.' && exit 1"]
+    "*.js": [
+      "eslint --max-warnings=0",
+      "sh -c 'if [ $? -ne 0 ]; then echo \"Linting failed. Please fix the errors.\" && exit 1; fi'"
+    ]
   },
   "husky": {
     "hooks": {
