@@ -16,9 +16,11 @@
     "husky": "^8.0.3",
     "lint-staged": "^15.0.1"
   },
-  "prepare": "husky install",
+  "scripts": {
+    "prepare": "husky install"
+  },
   "lint-staged": {
-    "*.js": ["eslint", "git add"]
+    "*.js": ["eslint"]
   },
   "husky": {
     "hooks": {
