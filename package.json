@@ -17,12 +17,8 @@
     "lint-staged": "^15.0.1"
   },
   "prepare": "husky install",
-  "scripts": {
-    "lint-and-check": "eslint --fix",
-    "pre-commit": "lint-staged"
-  },
   "lint-staged": {
-    "*.js": ["npm run lint-and-check", "git add"]
+    "*.js": ["eslint", "git add"]
   },
   "husky": {
     "hooks": {
